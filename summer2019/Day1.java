@@ -9,13 +9,19 @@ public class Day1 {
 		// 成人ならお酒が飲めるという処理
 		Scanner scanner = new Scanner(System.in);
 		
-		int age = scanner.nextInt();
-		if (20 <= age) {
-			System.out.println(age + "歳ならお酒が飲める！");
-		} else {
-			System.out.println(age + "歳ならお酒はまだ飲んではいけない！！");
+		while(true) {
+			System.out.print("input your age[-1: quit] > ");
+			int age = scanner.nextInt();
+			if (20 <= age) {
+				System.out.println(age + "歳ならお酒が飲める！");
+			} else if(age < 0) {
+				break;
+			} else {
+				System.out.println(age + "歳ならお酒はまだ飲んではいけない！！");
+			}
 		}
 		
 		scanner.close();
+		System.out.println("プログラムを終了します。");
 	}
 }
